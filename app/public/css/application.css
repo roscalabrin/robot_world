@@ -1,0 +1,36 @@
+
+html {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  color: #212121;
+}
+
+
+/*** HOMEPAGE ***/
+
+.homepage {
+  background-image: url("/img/homepage.jpg")
+}
+
+.homepage-title {
+  color: #fff;
+}
+
+.navbar {
+  background-color: #000;
+  border: none;
+  padding-bottom: 20px;
+}
+
+.homepage-list {
+  color: #fff;
+  font-size: 20px;
+}
+
+/*** ROBOT INFO ***/
+
+.robot-info {
+  padding-top: 100px;
+}

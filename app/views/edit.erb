@@ -1,0 +1,61 @@
+<div class="container">
+
+
+    <h4>Edit Robot Data:</h4>
+
+    <form class="form-horizontal" action="/robots/<%= @robot.id %>" method="post">
+      <input type="hidden" name="_method" value="PUT" />
+
+      <div class="form-group">
+       <label class="col-sm-3 control-label">Name</label>
+       <div class="col-sm-6">
+         <input type="text" name="robot[name]" value="<%= @robot.name %>" /><br/>
+       </div>
+     </div>
+
+      <div class="form-group">
+       <label class="col-sm-3 control-label">City</label>
+       <div class="col-sm-6">
+         <input type="text" name='robot[city]' value="<%= @robot.city %>" /><br/>
+       </div>
+     </div>
+
+      <div class="form-group">
+       <label class="col-sm-3 control-label">State</label>
+       <div class="col-sm-6">
+         <input type="text" name='robot[state]' value="<%= @robot.state %>" />
+       </div>
+     </div>
+
+      <div class="form-group">
+       <label class="col-sm-3 control-label">Avatar</label>
+       <div class="col-sm-6">
+         <input type="text" name='robot[avatar]' value="<%= @robot.avatar %>" />
+       </div>
+     </div>
+
+      <div class="form-group">
+       <label class="col-sm-3 control-label">Birthdate</label>
+       <div class="col-sm-6">
+         <input type="text" name='robot[birthdate]' value="<%= @robot.birthdate %>"/>
+       </div>
+     </div>
+
+      <div class="form-group">
+       <label class="col-sm-3 control-label">Date Hired</label>
+       <div class="col-sm-6">
+         <input type="text" name='robot[date_hired]' value="<%= @robot.date_hired %>" />
+       </div>
+     </div>
+
+      <div class="form-group">
+       <label class="col-sm-3 control-label">Department</label>
+       <div class="col-sm-6">
+         <input type="text" name='robot[department]' value="<%= @robot.department %>" />
+       </div>
+     </div>
+
+
+    <input type="submit"/>
+  </form>
+</div>
