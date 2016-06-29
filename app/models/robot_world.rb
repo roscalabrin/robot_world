@@ -1,5 +1,6 @@
 require 'yaml/store'
 require_relative 'robot'
+require 'time'
 
 class RobotWorld
   attr_reader :database
@@ -55,10 +56,43 @@ class RobotWorld
   end
 
   def average_age
-    age = []
-    database.transaction do
-      database['birthdate'] << age
+    current_year = Time.new.year
+    ages = raw_robots.map do |robot|
+      current_year - Time.parse(robot["birthdate"]).year
     end
+    ages.reduce(:+)/ages.length
+  end
+
+  def hired_by_year
+    counts = Hash.new 0
+    year_of_hire = raw_robots.map do |robot|
+      counts[Time.parse(robot["date_hired"]).year] += 1
+    end
+    counts
+  end
+
+  def department_count
+    counts = Hash.new 0
+    year_of_hire = raw_robots.map do |robot|
+      counts[robot["department"]] += 1
+    end
+    counts
+  end
+
+  def city_count
+    counts = Hash.new 0
+    year_of_hire = raw_robots.map do |robot|
+      counts[robot["city"]] += 1
+    end
+    counts
+  end
+
+  def state_count
+    counts = Hash.new 0
+    year_of_hire = raw_robots.map do |robot|
+      counts[robot["state"]] += 1
+    end
+    counts
   end
 
 end
