@@ -16,44 +16,41 @@ class RobotWorldAppTest < Minitest::Test
     assert_instance_of Robot, robot
   end
 
-    # def test_it_finds_all_tasks
-    #   task_manager.create(title: "Rest", description: "take a nap")
-    #   task_manager.create(title: "Cook", description: "food")
-    #   task_manager.create(title: "Lunch", description: "eat lunch")
-    #
-    #   assert_equal 3, task_manager.all.count
-    #   assert_instance_of Task, task_manager.all.first
-    # end
-    #
-    # def test_it_finds_a_single_test
-    #  task_manager.create(title: "Rest", description: "take a nap")
-    #  task_manager.create(title: "Cook", description: "food")
-    #  task_manager.create(title: "Lunch", description: "eat lunch")
-    #
-    #  assert_equal "Rest", task_manager.find(current_task_id).title
-    #  assert_instance_of Task, task_manager.find(current_task_id)
-    # end
-    #
-    # def test_that_it_updates_a_task
-    #   task_manager.create(title: "Rest", description: "take a nap")
-    #   task_manager.update(current_task_id, {title: "Rest", description: "food"})
-    #
-    #   task = task_manager.find(current_task_id)
-    #   assert_equal "food", task.description
-    # end
-    #
-    # def test_it_deletes_a_task
-    #   task_manager.create(title: "Rest", description: "take a nap")
-    #   # task_manager.create(title: "Cook", description: "food")
-    #   # task_manager.create(title: "Lunch", description: "eat lunch")
-    #
-    #   assert_equal 1, task_manager.all.size
-    #
-    #   task_manager.destroy(current_task_id)
-    #
-    #   assert_equal 0, task_manager.all.size
-    # end
-    #
-    #
+    def test_it_finds_all_robots
+      robot_world.create(name: "R2D2", city: "Naboo", state: "NB", birthadate: "09/08/1999", date_hired: "05/28/2003", department: "engineering", avatar: "https://robohash.org/r2d2")
+      robot_world.create(name: "C3PO", city: "Tatooine", state: "TA", birthadate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
+
+      assert_equal 2, robot_world.all.size
+      assert_instance_of Robot, robot_world.all.first
+    end
+
+    def test_it_finds_a_single_robot
+      robot_world.create(name: "R2D2", city: "Naboo", state: "NB", birthadate: "09/08/1999", date_hired: "05/28/2003", department: "engineering", avatar: "https://robohash.org/r2d2")
+      robot_world.create(name: "C3PO", city: "Tatooine", state: "TA", birthadate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
+
+      assert_equal "R2D2", robot_world.find(current_robot_id).name
+      assert_equal "Naboo", robot_world.find(current_robot_id).city
+    end
+
+    def test_that_it_updates_a_robot_info
+      robot_world.create(name: "C3PO", city: "Tatooine", state: "TA", birthadate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
+
+      robot_world.update(current_robot_id, {name: "C3POO", city: "Tatooine", state: "TT", birthadate: "09/08/985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po"})
+
+      robot = robot_world.find(current_robot_id)
+
+      assert_equal "C3POO", robot.name
+      assert_equal "TT", robot.state
+    end
+
+    def test_it_deletes_a_robot
+      robot_world.create(name: "C3PO", city: "Tatooine", state: "TA", birthadate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
+
+      assert_equal 1, robot_world.all.size
+
+      robot_world.destroy(current_robot_id)
+
+      assert_equal 0, robot_world.all.size
+    end
 
 end
