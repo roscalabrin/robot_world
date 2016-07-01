@@ -1,4 +1,5 @@
 require 'sqlite3'
+require 'faker'
 
 class RobotWorldApp < Sinatra::Base
 

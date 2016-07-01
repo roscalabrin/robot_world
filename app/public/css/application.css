@@ -11,15 +11,30 @@ body {
 /*** HOMEPAGE ***/
 
 .homepage {
-  background-image: url("/img/homepage.jpg")
+  background-image: url("/img/homepage3.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 .homepage-title {
-  color: #fff;
+  font-family: 'Abril Fatface', cursive;
+  text-align: left;
+  margin-top: 60px;
+  margin-right: 10px;
+  font-size: 64px;
+  color: #000;
+}
+
+.homepage-links {
+  font-family: 'Abril Fatface', cursive;
+  margin-top: 30px;
+  margin-right: 10px;
+  font-size: 24px;
+  color: #000;
 }
 
 .navbar {
-  background-color: #000;
+  background-color: #fff700;
   border: none;
   padding-bottom: 20px;
 }
@@ -28,6 +43,17 @@ body {
   color: #fff;
   font-size: 20px;
 }
+
+/*** NEW ROBOT ***/
+.test {
+  background-image: url("/img/new-form.jpg");
+  background-position: center;
+  height: 300px;
+}
+
+.new-robot-form {
+  background-color: #8cc6e3;
+  }
 
 /*** ROBOT INFO ***/
 

@@ -12,6 +12,13 @@ class RobotWorld
     database.execute("INSERT INTO robots (name, city, state, birthdate, date_hired, department, avatar) VALUES (?, ?, ?, ?, ?, ?, ?);", robot[:name], robot[:city], robot[:state], robot[:birthadate], robot[:date_hired], robot[:department], robot[:avatar])
   end
 
+  def populate_database
+    5.times do
+      robot_world.create(name: Faker::StarWars.droid, city: Faker::Address.city, state: Faker::Address.state_abbr, birthadate: Faker::Date, date_hired: Faker::Date, department: Faker::Commerce.department, avatar: Faker::Avatar.image)
+    end
+
+  end
+
   def raw_robots
     database.execute ("SELECT * FROM robots;")
   end

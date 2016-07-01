@@ -17,6 +17,7 @@ class RobotWorldAppTest < Minitest::Test
   end
 
     def test_it_finds_all_robots
+      binding.pry
       robot_world.create(name: "R2D2", city: "Naboo", state: "NB", birthadate: "09/08/1999", date_hired: "05/28/2003", department: "engineering", avatar: "https://robohash.org/r2d2")
       robot_world.create(name: "C3PO", city: "Tatooine", state: "TA", birthadate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
 
