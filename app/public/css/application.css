@@ -19,19 +19,40 @@ body {
 .homepage-title {
   font-family: 'Abril Fatface', cursive;
   text-align: left;
-  margin-top: 60px;
-  margin-right: 10px;
+  margin-top: 80px;
   font-size: 64px;
   color: #000;
 }
 
+.homepage-title h1 {
+  text-align: center;
+}
+
 .homepage-links {
-  font-family: 'Abril Fatface', cursive;
-  margin-top: 30px;
-  margin-right: 10px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "open sans";
+  margin-top: 20px;
+  padding-left: 0px;
   font-size: 24px;
   color: #000;
+  text-align: center;
+  margin-left: -50px;
 }
+
+.homepage-links li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.homepage-links li a {
+  color: #666;
+}
+
+.homepage-links li:first-child a {
+}
+
 
 .navbar {
   background-color: #fff700;
@@ -54,6 +75,9 @@ body {
 .new-robot-form {
   background-color: #8cc6e3;
   }
+
+/*** ROBOT INDEX ***/
+
 
 /*** ROBOT INFO ***/
 

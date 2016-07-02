@@ -1,5 +1,6 @@
-require 'yaml/store'
 require 'time'
+require 'yaml/store'
+require 'pry'
 
 class RobotWorld
   attr_reader :database
@@ -9,15 +10,25 @@ class RobotWorld
   end
 
   def create(robot)
-    database.execute("INSERT INTO robots (name, city, state, birthdate, date_hired, department, avatar) VALUES (?, ?, ?, ?, ?, ?, ?);", robot[:name], robot[:city], robot[:state], robot[:birthadate], robot[:date_hired], robot[:department], robot[:avatar])
+    database.execute("INSERT INTO robots (name, city, state, birthdate, date_hired, department, avatar) VALUES (?, ?, ?, ?, ?, ?, ?);", robot[:name], robot[:city], robot[:state], robot[:birthdate], robot[:date_hired], robot[:department], robot[:avatar])
   end
 
   def populate_database
-    5.times do
-      robot_world.create(name: Faker::StarWars.droid, city: Faker::Address.city, state: Faker::Address.state_abbr, birthadate: Faker::Date, date_hired: Faker::Date, department: Faker::Commerce.department, avatar: Faker::Avatar.image)
+    10.times do
+      params = { :name => Faker::StarWars.droid, :city  => Faker::Address.city, :state => Faker::Address.state_abbr, :birthdate => Faker::Date.backward(94).strftime, :date_hired => Faker::Date.backward(14).strftime, :department => Faker::Commerce.department, :avatar => Faker::Avatar.image }
+      create(params)
+      puts "Created robot #{params[:name]}"
     end
-
   end
+
+  # def seeding_database
+  #   100.times do
+  #     params = { :name => Faker::Name.name, :city => Faker::Address.city, :state => Faker::Address.state_abbr, :birthdate => Faker::Date.backward(94), :hire => Faker::Date.backward(14), :department => Faker::Commerce.department }
+  #     create(params)
+  #     puts "Created robot #{params[:name]}"
+  #   end
+  # end
+
 
   def raw_robots
     database.execute ("SELECT * FROM robots;")
