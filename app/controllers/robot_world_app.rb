@@ -14,7 +14,7 @@ class RobotWorldApp < Sinatra::Base
 
   get '/robots/dashboard' do
     @average_age = robot_world.average_age
-    # @hired_by_year = robot_world.hired_by_year
+    @hired_by_year = robot_world.hired_by_year
     @department_count = robot_world.department_count
     @city_count = robot_world.city_count
     @state_count = robot_world.state_count

@@ -11,25 +11,24 @@ class RobotWorld
 
   def create(robot)
     database.execute("INSERT INTO robots (name, city, state, birthdate, date_hired, department, avatar) VALUES (?, ?, ?, ?, ?, ?, ?);", robot[:name], robot[:city], robot[:state], robot[:birthdate], robot[:date_hired], robot[:department], robot[:avatar])
-        # binding.pry
+        binding.pry
   end
 
   def populate_database
     2.times do
-      params = { :name => Faker::StarWars.droid, :city  => Faker::Address.city, :state => Faker::Address.state_abbr, :birthdate => Faker::Date.backward(94).strftime, :date_hired => Faker::Date.backward(14).strftime, :department => Faker::Commerce.department, :avatar => Faker::Avatar.image }
+      params = { :name => Faker::StarWars.droid, :city  => Faker::Address.city, :state => Faker::Address.state_abbr, :birthdate => Faker::Date.backward(7300).strftime('%m/%d/%Y'), :date_hired => Faker::Date.backward(3650).strftime('%m/%d/%Y'), :department => Faker::Commerce.department, :avatar => Faker::Avatar.image }
       create(params)
       puts "Created robot #{params[:name]}"
     end
 
-  end
-
-  # def seeding_database
-  #   100.times do
-  #     params = { :name => Faker::Name.name, :city => Faker::Address.city, :state => Faker::Address.state_abbr, :birthdate => Faker::Date.backward(94), :hire => Faker::Date.backward(14), :department => Faker::Commerce.department }
+  # def populate_database
+  #   2.times do
+  #     params = { :name => Faker::StarWars.droid, :city  => Faker::Address.city, :state => Faker::Address.state_abbr, :birthdate => Faker::Date.backward(94).strftime('%m/%d/%Y'), :date_hired => Faker::Date.backward(14).strftime('%m/%d/%Y'), :department => Faker::Commerce.department, :avatar => Faker::Avatar.image }
   #     create(params)
   #     puts "Created robot #{params[:name]}"
   #   end
-  # end
+
+  end
 
 
   def raw_robots
@@ -64,11 +63,12 @@ class RobotWorld
   def average_age
     current_year = Time.now
     ages = raw_robots.map do |robot|
-      result = Time.new(0) + (current_year - Time.parse(robot["birthdate"]))
+      result = Time.new(0) + (current_year -   Time.strptime(robot["birthdate"], "%m/%d/%Y"))
       result.year
     end
     ages.reduce(:+)/ages.length
   end
+
 
   def hired_by_year
     counts = Hash.new 0
