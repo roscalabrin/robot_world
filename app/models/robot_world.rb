@@ -19,6 +19,7 @@ class RobotWorld
       create(params)
       puts "Created robot #{params[:name]}"
     end
+    # binding.pry
   end
 
   # def seeding_database
@@ -60,10 +61,12 @@ class RobotWorld
   end
 
   def average_age
+
     current_year = Time.new.year
     ages = raw_robots.map do |robot|
       current_year - Time.parse(robot["birthdate"]).year
     end
+    # binding.pry
     ages.reduce(:+)/ages.length
   end
 
