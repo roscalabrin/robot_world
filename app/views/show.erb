@@ -1,16 +1,43 @@
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/robots">All Robots</a></li>
+  <li><a href="/robots/new">Add New Robot</a></li>
+  <li><a href="/robots/dashboard">Dashboard</a></li>
+</ol>
 
-  <div class="container row">
-  <div class="col-md-4">
-    <img src="<%= @robot.avatar%>/<%= @robot.name %>" >
-  </div>
+<div class="container">
 
-  <div class="col-md-4 robot-info">
-   <p>Name: <%= @robot.name %></p>
-   <p>City: <%= @robot.city %></p>
-   <p>State: <%= @robot.state %></p>
-   <p>Birthdate: <%= @robot.birthdate %></p>
-   <p>Date Hired: <%= @robot.date_hired%></p>
-   <p>Department: <%= @robot.department %></p>
+  <div class="row">
+
+    <div class="col-md-4">
+      <img src="<%= @robot.avatar%>/<%= @robot.name %>" >
+    </div>
+
+    <div class="col-md-4 robot-info">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <td>Name</td> <td><%= @robot.name %></td>
+          </thead>
+          <tr>
+            <td>City</td> <td><%= @robot.city %></td>
+          </tr>
+          <tr>
+            <td>State</td> <td><%= @robot.state %></td>
+          </tr>
+          <tr>
+            <td>Birthdate</td> <td><%= @robot.birthdate %></td>
+          </tr>
+          <tr>
+            <td>Date Hired</td> <td><%= @robot.date_hired %></td>
+          </tr>
+          <tr>
+            <td>Department</td> <td><%= @robot.department %></td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
   </div>
 
 </div>

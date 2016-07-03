@@ -6,40 +6,41 @@
 </ol>
 
 <div class="container">
+
   <div class="page-header">
     <h3>All Robots</h3>
   </div>
 
-  <div>
-    <a href="/robots/new">Add New Robot</a>
-  </div>
+  <div class="row robot-showcase-row">
 
-  <div class="col-md-4">
-  <table class="table">
-    <thead>
-      <td>#</td>
-      <td>Robot</td>
-    </thead>
-      <% @robots.each do |robot| %>
-      <tr>
+    <% @robots.each do |robot| %>
+      <div class="col-md-3 robot-showcase">
 
-       <td><%= robot.id%>:</td>
-       <td><a href="/robots/<%= robot.id %>"><%= robot.name %></a></td>
+       <img class="media-object" src="<%= robot.avatar %>" alt="...">
+          <hr>
+       <h4 id="index-robot-name">
 
-       <td>
-         <a href="/robots/<%= robot.id %>/edit">Edit Robot</a>
 
+       <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h4>
+
+
+       <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
+         <button type="button" class="edit-delete-btn">
+           <a href="/robots/<%= robot.id %>/edit"><i class="glyphicon glyphicon-edit"></i></a>
+         </button>
+         <button type="submit" class="edit-delete-btn">
          <form action="/robots/<%= robot.id %>" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="Delete Robot" />
+           <input type="hidden" name="_method" value="DELETE">
+             <i class="glyphicon glyphicon-trash"></i>
+
          </form>
+         </button>
+      </div>
 
-       </td>
+    </div>
 
-      </tr>
-      <% end %>
-  </table>
-
+    <% end %>
 
   </div>
+
 </div>

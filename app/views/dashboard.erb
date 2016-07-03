@@ -6,11 +6,66 @@
 </ol>
 
 <div class="container">
+  <div class="col-md-4">
+    <ul class="list-group">
+      <li class="list-group-item"><h5>Robots Average Age</h5></li>
+      <li class="list-group-item"><%= @average_age %></li>
+    </ul>
+  </div>
+</div>
 
-  <h3>Robots Average Age: <%= @average_age %></h3>
-  <h3>Robots Average Age: <%= @average_age %></h3>
-  <h3>Robots By Department: <%= @department_count %></h3>
-  <h3>Robots By City: <%= @city_count %></h3>
-  <h3>Robots By State: <%= @state_count %></h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item"><h5>Robots By Department:</h5></li>
+        <li class="list-group-item">
+          <% @department_count.each do |item| %>
+          <table class="table-condensed">
+            <tr>
+              <td><%= item.first.capitalize  %></td>
+              <td><%= item.last  %></td>
+            </tr>
+          </br>
+          <% end %>
+        </table>
+        </li>
+      </ul>
+    </div>
 
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item"><h5>Robots By City:</h5></li>
+        <li class="list-group-item">
+          <% @city_count.each do |item| %>
+          <table class="table-condensed">
+            <tr>
+              <td><%= item.first.capitalize  %></td>
+              <td><%= item.last  %></td>
+            </tr>
+          </br>
+          <% end %>
+        </table>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <ul class="list-group">
+        <li class="list-group-item"><h5>Robots By State:</h5></li>
+        <li class="list-group-item">
+          <% @state_count.each do |item| %>
+          <table class="table-condensed">
+            <tr>
+              <td><%= item.first.capitalize  %></td>
+              <td><%= item.last  %></td>
+            </tr>
+          </br>
+          <% end %>
+        </table>
+        </li>
+      </ul>
+    </div>
+
+  </div>
 </div>

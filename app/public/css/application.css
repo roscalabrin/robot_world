@@ -83,11 +83,6 @@ body {
 
 
 /*** NEW ROBOT ***/
-.test {
-  background-image: url("/img/new-form.jpg");
-  background-position: center;
-  height: 300px;
-}
 
 .new-robot-body {
   background-color: #f9faec;
@@ -117,6 +112,37 @@ body {
 
 
 /*** ROBOT INDEX ***/
+
+.media-object {
+  width: 192px;
+  height: 192px;
+  padding-top: -10px;
+}
+
+.robot-showcase img.media-object {
+  padding-left:40px;
+}
+
+.robot-showcase{
+  border: solid 5px white;
+  background-color: #f9faec;
+  margin-bottom: 5px;
+}
+
+#index-robot-name, #index-robot-name a  {
+  margin-top: 10px;
+  text-align: center;
+  color: #000;
+}
+
+.edit-delete-btn, .edit-delete-btn:hover {
+  background-color: #f9faec;
+  border: none;
+}
+
+.glyphicon {
+  color: #c95450;
+}
 
 
 /*** ROBOT INFO ***/
