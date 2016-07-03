@@ -67,6 +67,7 @@ body {
 
 
 /*** BREADCRUMB ***/
+
 .breadcrumb {
   background-color: #000;
   border-radius: 0;
@@ -84,16 +85,15 @@ body {
 
 /*** NEW ROBOT ***/
 
-.new-robot-body {
+.new-or-edit-robot-body {
   background-color: #f9faec;
-  /*background-color: #80bbd9;*/
-  }
+}
 
 .new-robot-form {
   margin-left: 20px;
 }
 
-#new-robot-form-title {
+.new-edit-robot-form-title {
   padding-bottom: 15px;
   font-size: 18px;
   }
@@ -108,6 +108,10 @@ body {
 .btn-submit:hover {
   background-color: #c95450;
   color: #f9faec;
+}
+
+.form-horizontal div:nth-child(7) {
+  display: none;
 }
 
 
@@ -150,3 +154,6 @@ body {
 .robot-info {
   padding-top: 100px;
 }
+
+
+/*** EDIT ROBOT ***/

@@ -20,24 +20,24 @@
           <hr>
        <h4 id="index-robot-name">
 
-
        <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h4>
 
+        <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
+           <button type="button" class="edit-delete-btn">
+             <a href="/robots/<%= robot.id %>/edit"><i class="glyphicon glyphicon-edit"></i></a>
+           </button>
+        </div>
 
-       <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
-         <button type="button" class="edit-delete-btn">
-           <a href="/robots/<%= robot.id %>/edit"><i class="glyphicon glyphicon-edit"></i></a>
-         </button>
-         <button type="submit" class="edit-delete-btn">
-         <form action="/robots/<%= robot.id %>" method="POST">
-           <input type="hidden" name="_method" value="DELETE">
+        <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
+          <form action="/robots/<%= robot.id %>" method="POST">
+            <button type="submit" class="edit-delete-btn">
              <i class="glyphicon glyphicon-trash"></i>
+              <input type="hidden" name="_method" value="DELETE">
+            </button>
+          </form>
+        </div>
 
-         </form>
-         </button>
       </div>
-
-    </div>
 
     <% end %>
 

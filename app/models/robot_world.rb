@@ -1,5 +1,5 @@
 require 'time'
-require 'yaml/store'
+# require 'yaml/store'
 require 'pry'
 
 class RobotWorld
@@ -11,15 +11,16 @@ class RobotWorld
 
   def create(robot)
     database.execute("INSERT INTO robots (name, city, state, birthdate, date_hired, department, avatar) VALUES (?, ?, ?, ?, ?, ?, ?);", robot[:name], robot[:city], robot[:state], robot[:birthdate], robot[:date_hired], robot[:department], robot[:avatar])
+        # binding.pry
   end
 
   def populate_database
-    10.times do
+    2.times do
       params = { :name => Faker::StarWars.droid, :city  => Faker::Address.city, :state => Faker::Address.state_abbr, :birthdate => Faker::Date.backward(94).strftime, :date_hired => Faker::Date.backward(14).strftime, :department => Faker::Commerce.department, :avatar => Faker::Avatar.image }
       create(params)
       puts "Created robot #{params[:name]}"
     end
-    # binding.pry
+
   end
 
   # def seeding_database

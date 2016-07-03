@@ -23,14 +23,14 @@ class HomeTest < FeatureTest
     page.find('.homepage-links').click_on 'All Robots'
     # I should be taken to the robots index page
     assert_equal '/robots', current_path
-    # And if I click on the 'Home' link to go back to the homepage
-    page.find('.home-link').click
+    # And if I click on the 'Home' in the breadcrumbs to go back to the homepage
+    page.find('.breadcrumb').click_on 'Home'
     # And I click the link to see 'Add New Robot' in the unordered list
     page.find('.homepage-links').click_on 'Add New Robot'
     # I should be taken to the new robot page
     assert_equal '/robots/new', current_path
-    # And if I click on the 'Home' link to go back to the homepage
-    page.find('.home-link').click
+    # And if I click on the 'Home' in the breadcrumbs to go back to the homepage
+    page.find('.breadcrumb').click_on 'Home'
     # And I click the link to see 'Dashboard' in the unordered list
     page.find('.homepage-links').click_on 'Dashboard'
     # I should be taken to the dashboard page
