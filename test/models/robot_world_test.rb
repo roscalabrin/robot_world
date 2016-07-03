@@ -54,11 +54,18 @@ class RobotWorldAppTest < Minitest::Test
     end
 
     def test_it_calculates_the_average_age_of_all_robots
-      skip
       robot_world.create(name: "R2D2", city: "Naboo", state: "NB", birthdate: "09/08/1999", date_hired: "05/28/2003", department: "engineering", avatar: "https://robohash.org/r2d2")
       robot_world.create(name: "C3PO", city: "Tatooine", state: "TA", birthdate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
 
-      assert_equal 10, robot_world.average_age
+      assert_equal 23, robot_world.average_age
+    end
+
+    def test_it_calculates_how_many_robots_where_hired_each_year
+      robot_world.create(name: "R2D2", city: "Naboo", state: "NB", birthdate: "09/08/1999", date_hired: "05/28/2003", department: "engineering", avatar: "https://robohash.org/r2d2")
+      robot_world.create(name: "C3PO", city: "Tatooine", state: "TA", birthdate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
+      robot_world.create(name: "C3PO-b", city: "Tatooine", state: "TA", birthdate: "09/08/1985", date_hired: "05/28/1992", department: "cleaning", avatar: "https://robohash.org/c3po")
+
+      assert_equal ({2003=>1, 1992=>2}), robot_world.hired_by_year
     end
 
     def test_it_calculates_the_number_of_robots_by_department

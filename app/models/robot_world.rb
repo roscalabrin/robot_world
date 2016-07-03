@@ -61,19 +61,20 @@ class RobotWorld
   end
 
   def average_age
-
-    current_year = Time.new.year
+    current_year = Time.now
     ages = raw_robots.map do |robot|
-      current_year - Time.parse(robot["birthdate"]).year
+      result = Time.new(0) + (current_year - Time.parse(robot["birthdate"]))
+      result.year
     end
-    # binding.pry
     ages.reduce(:+)/ages.length
   end
 
   def hired_by_year
     counts = Hash.new 0
     year_of_hire = raw_robots.map do |robot|
-      counts[Time.parse(robot["date_hired"]).year] += 1
+      year = robot["date_hired"].split('/')[2].to_i
+      counts[year] += 1
+      # counts[Time.parse(robot["date_hired"])] += 1
     end
     counts
   end
