@@ -1,12 +1,14 @@
-<div>
-  <a class="home-link" href="/">Home</a>
-</div>
-<a href="/robots">All Robots</a>
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/robots">All Robots</a></li>
+  <li class="active">Add New Robot</li>
+      <li><a href="/robots/dashboard">Dashboard</a></li>
+</ol>
 
-<body class="new-robot-form">
+<body class="new-robot-body">
 
-  <div class="form-group col-md-4">
-    <h5>Create a new robot:</h5>
+  <div class="form-group col-md-4 new-robot-form">
+    <h5 id="new-robot-form-title">Create a new robot:</h5>
 
     <form class="form-horizontal" action="/robots" method="post">
       <div class="form-group">
@@ -51,7 +53,7 @@
        </div>
      </div>
 
-    <input class="btn" type="submit" />
+    <input class="btn btn-submit" type="submit" />
     </form>
   </div>
 

@@ -1,6 +1,7 @@
 
 html {
-  font-family: 'Lato', sans-serif;
+  font-family: "open sans";
+  /*font-family: 'Lato', sans-serif;*/
 }
 
 body {
@@ -53,7 +54,6 @@ body {
 .homepage-links li:first-child a {
 }
 
-
 .navbar {
   background-color: #fff700;
   border: none;
@@ -65,6 +65,23 @@ body {
   font-size: 20px;
 }
 
+
+/*** BREADCRUMB ***/
+.breadcrumb {
+  background-color: #000;
+  border-radius: 0;
+  /*border-radius: 0 !important;*/
+}
+
+.breadcrumb a {
+  color: #f9faec;
+}
+
+.breadcrumb li.active{
+  color: #666;
+}
+
+
 /*** NEW ROBOT ***/
 .test {
   background-image: url("/img/new-form.jpg");
@@ -72,9 +89,32 @@ body {
   height: 300px;
 }
 
-.new-robot-form {
-  background-color: #8cc6e3;
+.new-robot-body {
+  background-color: #f9faec;
+  /*background-color: #80bbd9;*/
   }
+
+.new-robot-form {
+  margin-left: 20px;
+}
+
+#new-robot-form-title {
+  padding-bottom: 15px;
+  font-size: 18px;
+  }
+
+.btn-submit {
+  margin-top: 15px;
+  background-color: #ec7e6e;
+  align-items: center;
+  color: #f9faec;
+}
+
+.btn-submit:hover {
+  background-color: #c95450;
+  color: #f9faec;
+}
+
 
 /*** ROBOT INDEX ***/
 
