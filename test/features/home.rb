@@ -13,6 +13,8 @@ class HomeTest < FeatureTest
   end
 
   def test_homepage_links
+    robot_world.create({ :name => "R2D2", :city => "Denver", :state => "CO", :birthdate => "05/07/1987", :date_hired =>" 09/10/2004", :department => "sales"})
+
     # as a user
     # When I go to the '/' page
     visit '/'
@@ -29,10 +31,8 @@ class HomeTest < FeatureTest
     # And if I click on the 'Home' in the breadcrumbs to go back to the homepage
     page.find('.breadcrumb').click_on 'Home'
     # And I click the link to see 'Dashboard' in the unordered list
-
-    assert page.find('.homepage-links').has_content?('Dashboard')
-    # page.find('.homepage-links').click_on 'Dashboard'
+    page.find('.homepage-links').click_on 'Dashboard'
     # I should be taken to the dashboard page
-    # assert_equal '/robots/dashboard', current_path
+    assert_equal '/robots/dashboard', current_path
   end
 end
