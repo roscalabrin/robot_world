@@ -51,7 +51,9 @@ body {
   color: #666;
 }
 
-.homepage-links li:first-child a {
+.homepage-links li a:hover {
+  color: #ec7e6e;
+  text-decoration: none;
 }
 
 .navbar {
@@ -160,6 +162,23 @@ body {
 
 /*** DASHBOARD ***/
 
-/*body {
+#dashboard-img {
+  background-image: url("/img/homepage6.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#dashboard-expanders {
+  margin-top: 50px;
+}
+
+.panel-title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.panel-default > .panel-heading {
   background-color: #f9faec;
-}*/
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

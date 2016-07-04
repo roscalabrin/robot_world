@@ -5,8 +5,8 @@
   <li class="active">Dashboard</a></li>
 </ol>
 
-
-<div class="col-md-8">
+<body id="dashboard-img">
+<div id="dashboard-expanders" class="col-md-4 col-sm-offset-4">
   <div class="panel-group" id="accordion1">
 
     <div class="panel panel-default">
@@ -15,7 +15,7 @@
       </div>
       <div id="collapseOne1" class="panel-collapse collapse">
         <div class="panel-body">
-          <%= @average_age %> years
+          <strong><%= @average_age %></strong> years
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@
           <% @hired_by_year.each do |item| %>
             <table class="table-condensed">
               <tr>
-                <td><%= item.first %> =></td>
+                <td><strong><%= item.first %>:</strong> </td>
                 <td><%= item.last  %></td>
               </tr>
             </br>
@@ -51,7 +51,7 @@
           <% @department_count.each do |item| %>
             <table class="table-condensed">
               <tr>
-                <td><%= item.first.capitalize  %></td>
+                <td><strong><%= item.first.capitalize  %></strong></td>
                 <td><%= item.last  %></td>
               </tr>
             </br>
@@ -71,7 +71,7 @@
           <% @city_count.each do |item| %>
           <table class="table-condensed">
             <tr>
-              <td><%= item.first.capitalize  %></td>
+              <td><strong><%= item.first.capitalize  %></td></strong>
               <td><%= item.last  %></td>
             </tr>
           </br>
@@ -90,7 +90,7 @@
           <% @state_count.each do |item| %>
           <table class="table-condensed">
             <tr>
-              <td><%= item.first.upcase  %></td>
+              <td><strong><%= item.first.upcase  %></strong></td>
               <td><%= item.last  %></td>
             </tr>
           </br>
@@ -102,4 +102,4 @@
   </div>
 
 
-</div>
+</body>
