@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/application.css">
+
     <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <title>My Robot Application</title>
   </head>
@@ -23,6 +24,32 @@
   </div>
 
   <div class="row robot-showcase-row">
+
+    
+      <div class="col-md-3 robot-showcase">
+
+       <img class="media-object" src="" alt="...">
+          <hr>
+       <h4 id="index-robot-name">
+
+       <a href="/robots/584">R2D2</a></h4>
+
+        <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
+           <button type="button" class="edit-delete-btn">
+             <a href="/robots/584/edit"><i class="glyphicon glyphicon-edit"></i></a>
+           </button>
+        </div>
+
+        <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
+          <form action="/robots/584" method="POST">
+            <button type="submit" class="edit-delete-btn">
+             <i class="glyphicon glyphicon-trash"></i>
+              <input type="hidden" name="_method" value="DELETE">
+            </button>
+          </form>
+        </div>
+
+      </div>
 
     
 
