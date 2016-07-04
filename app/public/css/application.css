@@ -11,7 +11,7 @@ body {
 
 /*** HOMEPAGE ***/
 
-.homepage {
+.homepage-img {
   background-image: url("/img/homepage3.jpg");
   background-repeat: no-repeat;
   background-position: top;
@@ -157,3 +157,9 @@ body {
 
 
 /*** EDIT ROBOT ***/
+
+/*** DASHBOARD ***/
+
+body {
+  background-color: #f9faec;
+}

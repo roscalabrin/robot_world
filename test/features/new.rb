@@ -5,7 +5,7 @@ class NewTest < FeatureTest
   def test_it_adds_a_new_robot
     # as a user
     # When I go to the '/robots/new' page
-    visit  '/robots/new'
+    visit '/robots/new'
     # I should see a form to add the new robot info
     assert page.has_css?('form')
     # and when I fill in the name field with R2D2
