@@ -4,7 +4,7 @@ class ShowTest < FeatureTest
 
   def test_it_shows_all_the_detailed_info_of_a_robot
     robot_world.create({ :name => "R2D2", :city => "Denver", :state => "CO", :birthdate => "05/07/1987", :date_hired =>" 09/10/2004", :department => "sales"})
-    robot1 = robot_world.all[0]
+    robot1 = robot_world.all.first
 
     # as a user
     # When I visit the robot page

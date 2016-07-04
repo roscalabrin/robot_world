@@ -12,7 +12,7 @@ body {
 /*** HOMEPAGE ***/
 
 .homepage-img {
-  background-image: url("/img/homepage3.jpg");
+  background-image: url("/img/homepage.jpg");
   background-repeat: no-repeat;
   background-position: top;
 }
@@ -163,7 +163,7 @@ body {
 /*** DASHBOARD ***/
 
 #dashboard-img {
-  background-image: url("/img/homepage6.jpg");
+  background-image: url("/img/dashboard.jpg");
   background-repeat: no-repeat;
   background-position: top;
 }
