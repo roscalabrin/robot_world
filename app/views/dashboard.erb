@@ -1,13 +1,105 @@
-<div class="container">
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li><a href="/robots">All Robots</a></li>
+  <li><a href="/robots/new">Add New Robot</a></li>
+  <li class="active">Dashboard</a></li>
+</ol>
 
-    <h3>Average Robot Age: <%= @average_age %></h3>
+<body id="dashboard-img">
+<div id="dashboard-expanders" class="col-md-4 col-sm-offset-4">
+  <div class="panel-group" id="accordion1">
 
+    <div class="panel panel-default">
+      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1,#accordion2" data-target="#collapseOne1">
+        <h4 class="panel-title">Robots Average Age</h4>
+      </div>
+      <div id="collapseOne1" class="panel-collapse collapse">
+        <div class="panel-body">
+          <strong><%= @average_age %></strong> years
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1,#accordion2,#accordion3" data-target="#collapseTwo1">
+        <h4 class="panel-title">Robots Hired By Year</h4>
+      </div>
+      <div  id="collapseTwo1" class="panel-collapse collapse">
+        <div class="panel-body">
+          <% @hired_by_year.each do |item| %>
+            <table class="table-condensed">
+              <tr>
+                <td><strong><%= item.first %>:</strong> </td>
+                <td><%= item.last  %></td>
+              </tr>
+            </br>
+          <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</br>
+
+  <div class="panel-group" id="accordion2">
+    <div class="panel panel-default">
+      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1,#accordion2" data-target="#collapseOne2">
+        <h4 class="panel-title">Robots By Department</h4>
+      </div>
+      <div id="collapseOne2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <% @department_count.each do |item| %>
+            <table class="table-condensed">
+              <tr>
+                <td><strong><%= item.first.capitalize  %></strong></td>
+                <td><%= item.last  %></td>
+              </tr>
+            </br>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="panel panel-default">
+      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1,#accordion2,#accordion3" data-target="#collapseTwo2">
+        <h4 class="panel-title">Robots By City</h4>
+      </div>
+      <div id="collapseTwo2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <% @city_count.each do |item| %>
+          <table class="table-condensed">
+            <tr>
+              <td><strong><%= item.first.capitalize  %></td></strong>
+              <td><%= item.last  %></td>
+            </tr>
+          </br>
+          <% end %>
+        </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1,#accordion2,#accordion3" data-target="#collapseThree2">
+        <h4 class="panel-title">Robots By State</h4>
+      </div>
+      <div id="collapseThree2" class="panel-collapse collapse">
+        <div class="panel-body">
+          <% @state_count.each do |item| %>
+          <table class="table-condensed">
+            <tr>
+              <td><strong><%= item.first.upcase  %></strong></td>
+              <td><%= item.last  %></td>
+            </tr>
+          </br>
+          <% end %>
+        </table>
+        </div>
+      </div>
+    </div>
   </div>
 
 
-<!-- breakdown of how many robots were hired each year
-
-Total number of robots
-department
-city
-state -->
+</body>

@@ -1,8 +1,7 @@
-require 'models/robot_world'
+require 'sqlite3'
+require 'faker'
 
 class RobotWorldApp < Sinatra::Base
-  set :root, File.expand_path("..", __dir__)
-  set :method_override, true
 
   get '/' do
     erb :home
@@ -14,7 +13,11 @@ class RobotWorldApp < Sinatra::Base
   end
 
   get '/robots/dashboard' do
-    @average_age= robot_world.average_age
+    @average_age = robot_world.average_age
+    @hired_by_year = robot_world.hired_by_year
+    @department_count = robot_world.department_count
+    @city_count = robot_world.city_count
+    @state_count = robot_world.state_count
     erb :dashboard
   end
 
@@ -48,10 +51,13 @@ class RobotWorldApp < Sinatra::Base
   end
 
   def robot_world
-  database = YAML::Store.new('db/robot_world')
-  @robot_world ||= RobotWorld.new(database)
-end
-
-
+    if ENV['RACK_ENV'] == 'test'
+      database = SQLite3::Database.new('db/robot_world_test.db')
+    else
+      database = SQLite3::Database.new('db/robot_world_development.db')
+    end
+      database.results_as_hash = true
+      @robot_world ||= RobotWorld.new(database)
+  end
 
 end

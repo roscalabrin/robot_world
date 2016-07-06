@@ -1,6 +1,7 @@
 
 html {
-  font-family: 'Lato', sans-serif;
+  font-family: "open sans";
+  /*font-family: 'Lato', sans-serif;*/
 }
 
 body {
@@ -10,16 +11,53 @@ body {
 
 /*** HOMEPAGE ***/
 
-.homepage {
-  background-image: url("/img/homepage.jpg")
+.homepage-img {
+  background-image: url("/img/homepage.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
 }
 
 .homepage-title {
-  color: #fff;
+  font-family: 'Abril Fatface', cursive;
+  text-align: left;
+  margin-top: 80px;
+  font-size: 64px;
+  color: #000;
+}
+
+.homepage-title h1 {
+  text-align: center;
+}
+
+.homepage-links {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "open sans";
+  margin-top: 20px;
+  padding-left: 0px;
+  font-size: 24px;
+  color: #000;
+  text-align: center;
+  margin-left: -50px;
+}
+
+.homepage-links li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.homepage-links li a {
+  color: #666;
+}
+
+.homepage-links li a:hover {
+  color: #ec7e6e;
+  text-decoration: none;
 }
 
 .navbar {
-  background-color: #000;
+  background-color: #fff700;
   border: none;
   padding-bottom: 20px;
 }
@@ -29,8 +67,118 @@ body {
   font-size: 20px;
 }
 
+
+/*** BREADCRUMB ***/
+
+.breadcrumb {
+  background-color: #000;
+  border-radius: 0;
+  /*border-radius: 0 !important;*/
+}
+
+.breadcrumb a {
+  color: #f9faec;
+}
+
+.breadcrumb li.active{
+  color: #666;
+}
+
+
+/*** NEW ROBOT ***/
+
+.new-or-edit-robot-body {
+  background-color: #f9faec;
+}
+
+.new-robot-form {
+  margin-left: 20px;
+}
+
+.new-edit-robot-form-title {
+  padding-bottom: 15px;
+  font-size: 18px;
+  }
+
+.btn-submit {
+  margin-top: 15px;
+  background-color: #ec7e6e;
+  align-items: center;
+  color: #f9faec;
+}
+
+.btn-submit:hover {
+  background-color: #c95450;
+  color: #f9faec;
+}
+
+.form-horizontal div:nth-child(7) {
+  display: none;
+}
+
+
+/*** ROBOT INDEX ***/
+
+.media-object {
+  width: 192px;
+  height: 192px;
+  padding-top: -10px;
+}
+
+.robot-showcase img.media-object {
+  padding-left:40px;
+}
+
+.robot-showcase{
+  border: solid 5px white;
+  background-color: #f9faec;
+  margin-bottom: 5px;
+}
+
+#index-robot-name, #index-robot-name a  {
+  margin-top: 10px;
+  text-align: center;
+  color: #000;
+}
+
+.edit-delete-btn, .edit-delete-btn:hover {
+  background-color: #f9faec;
+  border: none;
+}
+
+.glyphicon {
+  color: #c95450;
+}
+
+
 /*** ROBOT INFO ***/
 
 .robot-info {
   padding-top: 100px;
+}
+
+
+/*** EDIT ROBOT ***/
+
+/*** DASHBOARD ***/
+
+#dashboard-img {
+  background-image: url("/img/dashboard.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+#dashboard-expanders {
+  margin-top: 50px;
+}
+
+.panel-title {
+  text-align: center;
+  font-size: 20px;
+}
+
+.panel-default > .panel-heading {
+  background-color: #f9faec;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

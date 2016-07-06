@@ -1,34 +1,46 @@
+<ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  <li class="active">All Robots</li>
+  <li><a href="/robots/new">Add New Robot</a></li>
+  <li><a href="/robots/dashboard">Dashboard</a></li>
+</ol>
+
 <div class="container">
+
   <div class="page-header">
-    <h3>Robots List</h3>
+    <h3>All Robots</h3>
   </div>
 
-  <div class="col-md-4">
-  <table class="table">
-    <thead>
-      <td>#</td>
-      <td>Robot</td>
-    </thead>
-      <% @robots.each do |robot| %>
-      <tr>
+  <div class="row robot-showcase-row">
 
-       <td><%= robot.id%>:</td>
-       <td><a href="/robots/<%= robot.id %>"><%= robot.name %></a></td>
+    <% @robots.each do |robot| %>
+      <div class="col-md-3 robot-showcase">
 
-       <td>
-         <a href="/robots/<%= robot.id %>/edit">Edit Robot</a>
+       <img class="media-object" src="<%= robot.avatar %>" alt="...">
+          <hr>
+       <h4 id="index-robot-name">
 
-         <form action="/robots/<%= robot.id %>" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="Delete Robot" />
-         </form>
+       <a href="/robots/<%= robot.id %>"><%= robot.name %></a></h4>
 
-       </td>
+        <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
+           <button type="button" class="edit-delete-btn">
+             <a href="/robots/<%= robot.id %>/edit"><i class="glyphicon glyphicon-edit"></i></a>
+           </button>
+        </div>
 
-      </tr>
-      <% end %>
-  </table>
+        <div class="btn-group btn-group-xs edit-delete" role="group" aria-label="...">
+          <form action="/robots/<%= robot.id %>" method="POST">
+            <button type="submit" class="edit-delete-btn">
+             <i class="glyphicon glyphicon-trash"></i>
+              <input type="hidden" name="_method" value="DELETE">
+            </button>
+          </form>
+        </div>
 
-  <a href="/robots/new">New Robot</a>
+      </div>
+
+    <% end %>
+
   </div>
+
 </div>
